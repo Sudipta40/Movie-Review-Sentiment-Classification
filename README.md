@@ -1,41 +1,57 @@
 # Movie-Review-Sentiment-Classification
-1. Install Dependencies
 
-Before running the code, ensure you have Python installed along with the required libraries. You can install them using:
+**Sentiment Analysis Comparison**
+This repository contains code for comparing several deep learning models on the IMDB movie reviews sentiment analysis task. The models include:
+LSTM
+CNN-LSTM
+BiGRU
+DistilBERT (via Hugging Face Transformers)
 
-pip install transformers datasets tensorflow scikit-learn numpy
+**Overview**
+The code demonstrates how to:
+Load and preprocess the IMDB dataset.
+Train and evaluate three neural network models (LSTM, CNN-LSTM, and BiGRU) using TensorFlow/Keras.
+Use a pre-trained DistilBERT model for sentiment analysis via the Hugging Face Transformers library.
+Visualize results with confusion matrices and print accuracy scores.
+Test the models on a few sample reviews.
 
-2. Download the IMDb Dataset
+**Setup Instructions**
 
-The script automatically downloads the IMDb dataset using the datasets library:
+*Clone the Repository*
+Clone this repository to your local machine:
+git clone <repository_url>
+cd <repository_directory>
 
-from datasets import load_dataset
-dataset = load_dataset("imdb", download_mode="force_redownload")
+*Create and Activate a Virtual Environment (Optional but Recommended)*
+python -m venv venv
+# On Windows:
+venv\Scripts\activate
+# On macOS/Linux:
+source venv/bin/activate
 
-3. Run the Code
+*Install Dependencies*
+Install all required Python packages using pip:
+pip install datasets transformers tensorflow scikit-learn matplotlib seaborn
+Note: The code uses TensorFlow 2.x and Hugging Face’s Transformers library.
 
-Save the script as sentiment_analysis.py and execute it:
+*Download the IMDB Dataset*
+The IMDB dataset will be downloaded automatically when running the code via the Hugging Face datasets library.
 
-python sentiment_analysis.py
+**Execution Instructions**
 
-4. Model Training and Evaluation
+*Run the Script*
+python main.py
 
 The script will:
+Preprocess the dataset.
+Train the LSTM, CNN-LSTM, and BiGRU models.
+Evaluate each model, displaying confusion matrices and accuracy scores.
+Test the DistilBERT model on a subset of reviews.
+Print a final comparison of the model accuracies.
 
-Preprocess the IMDb dataset.
+*Viewing Visualizations*
+The script generates plots for the confusion matrices using Matplotlib and Seaborn.
 
-Train and evaluate three deep learning models:
+**Course Instructor Acknowledgment**
+This project was developed as part of the coursework for Deep Learning. Special thanks to Md. Mynoddin for his guidance and support throughout the course.
 
-LSTM
-
-CNN-LSTM
-
-BiGRU
-
-Evaluate the DistilBERT model using a pre-trained transformer pipeline.
-
-Display accuracy results for each model.
-
-5. Sample Predictions
-
-The script tests the trained models on custom sample reviews, printing sentiment predictions along with confidence scores.
